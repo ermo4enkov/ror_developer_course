@@ -20,16 +20,32 @@ class Student
   #     @first_name
   # end
   #
-  attr_accessor :first_name, :last_name, :email, :password, :username
+  #
+  # Basically this provides a setter functionality
+  attr_accessor :first_name, :last_name, :email, :password
 
-  @first_name
-  @last_name
-  @email
-  @username
-  @password
+  # Basically this provides a getter functionality
+  # attr_reader :username
+
+  # @first_name
+  # @last_name
+  # @email
+  # @username
+  # @password
+
+  # But how it works in a more common way
+  # The key method initialize allows to set properties from the start
+  def initialize(firstname, lastname, email, username, password)
+    @first_name = firstname
+    @last_name = lastname
+    @email = email
+    @username = username
+    @password = password
+  end
+
 
   def to_s
-      "First name is #{first_name}"
+    "First name is #{first_name}"
   end
 
 end
@@ -41,14 +57,16 @@ end
 
 
 #Let's go with attr_accessor
-roman = Student.new
-roman.first_name = 'Vasya'
-roman.email = 'test@test.com'
-roman.last_name = 'Ermochenkov'
-roman.username = '...'
+# roman = Student.new
+# roman.first_name = 'Vasya'
+# roman.email = 'test@test.com'
+# roman.last_name = 'Ermochenkov'
+# roman.username = '...'
+# puts roman
+
+
+roman = Student.new('Roman', 'Ermo', 'test@test.com', 'ermo')
 puts roman
-
-
 
 
 
